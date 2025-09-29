@@ -1,4 +1,4 @@
-These 4 batch files will take you through the process of converting a recording or set of recordings into an RVC voice model that can be used for voice cloning. No special driver is required to use this outside of what is in this repository.
+These 4 batch files will take you through the process of converting a recording or set of recordings into an RVC voice model that can be used for voice cloning. No special driver is required to use this outside of what is in this repository. You will need to install Git, Git LFS, MSVC, and the Windows SDK in order to build the required wheels.
 
 Installer
 This will download the correct version of Python, install the latest nightly ROCm build for Windows, and several other dependencies that require patching. It is currently set for gfx110x (RDNA3) GPUs. If you have RDNA4 or some other AMD card, look at the "links for other ROCm builds" below and replace the link accordingly. It will then clone the repository to your disk and the correct files. Make sure you have Git and Git LFS installed.
