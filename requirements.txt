@@ -9,7 +9,6 @@ numpy==2.2.0
 scipy
 librosa==0.9.1
 llvmlite
-fairseq==0.12.2
 faiss-cpu
 Cython
 pydub>=0.25.1

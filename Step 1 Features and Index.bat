@@ -1,6 +1,7 @@
 @echo off
 ECHO This file will process the voice files you have placed in the dataset folder to prepare for training.
 pause
+cls
 mkdir "%~dp0\logs\dataset"
 ECHO Step 1. Preprocessing dataset
 python "%~dp0\infer\modules\train\preprocess.py" "%~dp0\dataset" 40000 2 "%~dp0\logs\dataset" False 3.0

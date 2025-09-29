@@ -3,6 +3,7 @@ ECHO WARNING: This will delete all the files that have been created (AKA everyth
 pause
 ECHO No, really, this deletes everything. No take-backs. Hours of work are about to go away! Are you sure you want that?
 pause
+cls
 rmdir /s /q %~dp0\logs\dataset
 mkdir %~dp0\logs\dataset
 rmdir /s /q %~dp0\assets\weights
