@@ -19,3 +19,6 @@ https://github.com/ROCm/TheRock/blob/main/RELEASES.md#torch-for-gfx110X-dgpu
 Other sources shamelessly stolen from:
 https://huggingface.co/Rejekts/project/tree/main?clone=true
 https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+
+For a real-time voice changer using RVC that can take advantage of AMD GPUs, I recommend (older) versions of:
+https://github.com/w-okada/voice-changer
