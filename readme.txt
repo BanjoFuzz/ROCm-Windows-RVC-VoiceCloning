@@ -1,13 +1,13 @@
-These 4 batch files will take you through the process of converting a recording or set of recordings into an RVC voice model that can be used for voice cloning. No special driver is required to use this outside of what is in this repository.
+These 4 batch files will take you through the process of converting a recording or set of recordings into an RVC voice model that can be used for voice cloning. No special driver is required to use this outside of what is in this repository. You will need to install Git, Git LFS, MSVC, and the Windows SDK in order to build the required wheels.
 
 Installer
 This will download the correct version of Python, install the latest nightly ROCm build for Windows, and several other dependencies that require patching. It is currently set for gfx110x (RDNA3) GPUs. If you have RDNA4 or some other AMD card, look at the "links for other ROCm builds" below and replace the link accordingly. It will then clone the repository to your disk and the correct files. Make sure you have Git and Git LFS installed.
 
 Step 1: Extract Features
-This will take the voice file(s) placed in the dataset folder and extract f0, pitch, and index.
+This will take the voice file(s) placed in the dataset folder and extract f0, pitch, and index to prepare for step 2.
 
 Step 2: Train Model
-This is the long one - this is the model training step. This will (hopefully) take advantage of your GPU to accelerate, but you can still expect it to take around 2 hours for more epochs.
+This is the long one - this is the model training step. This will (hopefully) take advantage of your GPU to accelerate, but you can still expect it to take around 2 hours for 100 epochs. Outputs are in assets/weights and logs/dataset for model and index respectively.
 
 Step 3: Cleanup
 This is available if you would like to reset the folders automatically for a new voice. It will delete anything that was created in steps 2 and 3.
@@ -19,3 +19,6 @@ https://github.com/ROCm/TheRock/blob/main/RELEASES.md#torch-for-gfx110X-dgpu
 Other sources shamelessly stolen from:
 https://huggingface.co/Rejekts/project/tree/main?clone=true
 https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+
+For a real-time voice changer using RVC that can take advantage of AMD GPUs, I recommend (older) versions of:
+https://github.com/w-okada/voice-changer
