@@ -4,10 +4,10 @@ Installer
 This will download the correct version of Python, install the latest nightly ROCm build for Windows, and several other dependencies that require patching. It is currently set for gfx110x (RDNA3) GPUs. If you have RDNA4 or some other AMD card, look at the "links for other ROCm builds" below and replace the link accordingly. It will then clone the repository to your disk and the correct files. Make sure you have Git and Git LFS installed.
 
 Step 1: Extract Features
-This will take the voice file(s) placed in the dataset folder and extract f0, pitch, and index.
+This will take the voice file(s) placed in the dataset folder and extract f0, pitch, and index to prepare for step 2.
 
 Step 2: Train Model
-This is the long one - this is the model training step. This will (hopefully) take advantage of your GPU to accelerate, but you can still expect it to take around 2 hours for more epochs.
+This is the long one - this is the model training step. This will (hopefully) take advantage of your GPU to accelerate, but you can still expect it to take around 2 hours for 100 epochs. Outputs are in assets/weights and logs/dataset for model and index respectively.
 
 Step 3: Cleanup
 This is available if you would like to reset the folders automatically for a new voice. It will delete anything that was created in steps 2 and 3.
