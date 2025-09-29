@@ -126,9 +126,9 @@ def run(rank, n_gpus, hps):
         writer = SummaryWriter(log_dir=hps.model_dir)
         writer_eval = SummaryWriter(log_dir=os.path.join(hps.model_dir, "eval"))
 
-    dist.init_process_group(
-        backend="gloo", init_method="env://", world_size=n_gpus, rank=rank
-    )
+    #dist.init_process_group(
+    #    backend="gloo", init_method="env://", world_size=n_gpus, rank=rank
+    #)
     torch.manual_seed(hps.train.seed)
     if torch.cuda.is_available():
         torch.cuda.set_device(rank)
@@ -198,12 +198,13 @@ def run(rank, n_gpus, hps):
     # net_d = DDP(net_d, device_ids=[rank], find_unused_parameters=True)
     if hasattr(torch, "xpu") and torch.xpu.is_available():
         pass
-    elif torch.cuda.is_available():
-        net_g = DDP(net_g, device_ids=[rank])
-        net_d = DDP(net_d, device_ids=[rank])
+    #elif torch.cuda.is_available():
+    #    net_g = DDP(net_g, device_ids=[rank])
+    #    net_d = DDP(net_d, device_ids=[rank])
     else:
-        net_g = DDP(net_g)
-        net_d = DDP(net_d)
+    #    net_g = DDP(net_g)
+    #    net_d = DDP(net_d)
+        pass
 
     try:  # 如果能加载自动resume
         _, _, _, epoch_str = utils.load_checkpoint(
