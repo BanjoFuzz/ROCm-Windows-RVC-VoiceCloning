@@ -10,5 +10,5 @@ python "%~dp0\infer\modules\train\extract\extract_f0_rmvpe.py" 1 0 0 "%~dp0\logs
 python "%~dp0\infer\modules\train\extract_feature_print.py" cuda:0 1 0 0 "%~dp0\logs\dataset" v2
 Echo Step 3. Training Index
 python trainindex.py
-ECHO You are now set to begin training - be warned that Step 3 is the long part of the process!
+ECHO You are now set to begin training - be warned that Step 2 is the long part of the process!
 pause
